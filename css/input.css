@@ -22,4 +22,5 @@ input:-webkit-autofill {
   -webkit-text-fill-color: white !important;
   font-family: inherit !important;
   font-size: inherit !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
 }
