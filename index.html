@@ -14,38 +14,47 @@
     class="min-h-screen bg-[linear-gradient(120deg,#2D3364_0%,#23295A_25%,#1A1F3C_55%,#10162B_75%,#080B14_100%)] text-white"
   >
     <main class="flex min-h-screen items-center justify-center">
-      <form class="form" action="/profile">
+      <form class="form" action="./profile/index.html" id="login-form">
         <img src="./assets/img/logo2.svg" class="mb-12 h-15" />
         <h1 class="font-heading text-2xl font-bold">Welcome back</h1>
         <p class="mt-1 text-sm text-gray-400">
           Sign in to continue to your communities
         </p>
-        <label for="email" class="mt-8 block text-xs font-bold text-gray-400"
-          >EMAIL OR USERNAME</label
+
+        <label
+          for="login-email"
+          class="mt-8 block text-xs font-bold text-gray-400"
+          >EMAIL</label
         >
         <input
           type="email"
           name="email"
-          id="email"
+          id="login-email"
+          required
           class="mt-2 w-full rounded-lg border border-white/10 bg-gray-900 px-3 py-2 text-sm text-white placeholder-gray-400/60 transition outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
-          placeholder="you@example.gmail.com"
+          placeholder="you@example.com"
         />
-        <label for="password" class="mt-6 block text-xs font-bold text-gray-400"
+
+        <label
+          for="login-password"
+          class="mt-6 block text-xs font-bold text-gray-400"
           >PASSWORD</label
         >
         <input
           type="password"
           name="password"
-          id="password"
+          id="login-password"
           minlength="8"
           required
           class="mt-2 w-full rounded-lg border border-white/10 bg-gray-900 px-3 py-2 text-sm text-white placeholder-gray-400/60 transition outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
           placeholder="*********"
         />
+
         <p class="mt-1 px-2 text-right text-sm text-indigo-400">
           forgot your password?
         </p>
         <button class="btn-primary mt-8 w-full">Login</button>
+
         <div class="my-4 flex items-center gap-4 text-xs text-gray-400">
           <div class="h-px flex-1 bg-white/10"></div>
           <span>OR CONTINUE WITH</span>
@@ -63,11 +72,85 @@
             <i class="fa-brands fa-github mr-2"></i>Github
           </button>
         </div>
+
         <p class="mt-5 text-sm text-gray-400">
           Don't have an account?
-          <a href="" class="text-indigo-400">Register now</a>
+          <a href="" id="to-register" class="text-indigo-400">Register now</a>
+        </p>
+      </form>
+
+      <form
+        class="form hidden"
+        action="./profile/index.html"
+        id="register-form"
+      >
+        <img src="./assets/img/logo2.svg" class="mb-12 h-15" />
+        <h1 class="font-heading text-2xl font-bold">Create account</h1>
+        <p class="mt-1 text-sm text-gray-400">Join your communities today</p>
+
+        <label for="reg-name" class="mt-8 block text-xs font-bold text-gray-400"
+          >NAME</label
+        >
+        <input
+          type="text"
+          name="name"
+          id="reg-name"
+          required
+          class="mt-2 w-full rounded-lg border border-white/10 bg-gray-900 px-3 py-2 text-sm text-white placeholder-gray-400/60 transition outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
+          placeholder="Your name"
+        />
+
+        <label
+          for="register-email"
+          class="mt-6 block text-xs font-bold text-gray-400"
+          >EMAIL</label
+        >
+        <input
+          type="email"
+          name="email"
+          id="register-email"
+          required
+          class="mt-2 w-full rounded-lg border border-white/10 bg-gray-900 px-3 py-2 text-sm text-white placeholder-gray-400/60 transition outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
+          placeholder="you@example.com"
+        />
+
+        <label
+          for="register-password"
+          class="mt-6 block text-xs font-bold text-gray-400"
+          >PASSWORD</label
+        >
+        <input
+          type="password"
+          name="password"
+          id="register-password"
+          minlength="8"
+          required
+          class="mt-2 w-full rounded-lg border border-white/10 bg-gray-900 px-3 py-2 text-sm text-white placeholder-gray-400/60 transition outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
+          placeholder="*********"
+        />
+        <label
+          for="confirm-password"
+          class="mt-6 block text-xs font-bold text-gray-400"
+          >CONFIRM PASSWORD</label
+        >
+        <input
+          type="password"
+          name="confirm-password"
+          id="confirm-password"
+          minlength="8"
+          required
+          class="mt-2 w-full rounded-lg border border-white/10 bg-gray-900 px-3 py-2 text-sm text-white placeholder-gray-400/60 transition outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
+          placeholder="*********"
+        />
+
+        <button class="btn-primary mt-8 w-full">Create account</button>
+
+        <p class="mt-5 text-sm text-gray-400">
+          Already have an account?
+          <a href="" id="to-login" class="text-indigo-400">Sign in</a>
         </p>
       </form>
     </main>
+    <script src="./js/auth.js"></script>
   </body>
 </html>

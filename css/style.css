@@ -226,6 +226,9 @@
   .flex {
     display: flex;
   }
+  .hidden {
+    display: none;
+  }
   .h-10 {
     height: calc(var(--spacing) * 10);
   }
