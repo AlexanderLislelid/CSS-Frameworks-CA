@@ -1,8 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Sora:wght@100..800&display=swap");
+
 @import "tailwindcss";
 
 @theme {
-  /* Colors - (bg-* / text-* / border-*) */
-  --color-nav: /* insert */;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-heading: "Sora", sans-serif;
 }
 
 /* Reusable components */
@@ -11,6 +13,6 @@
   @apply rounded-lg bg-indigo-500 px-5 py-2 font-medium text-white shadow-md transition hover:scale-105 hover:bg-indigo-600;
 }
 
-.card {
-  @apply m-6 rounded-xl border border-gray-700 p-4 shadow-xl backdrop-blur-md;
+.form {
+  @apply m-6 w-80 max-w-112.5 rounded-3xl border border-gray-600 bg-gray-800 p-8 shadow-xl backdrop-blur-md md:min-w-110;
 }
