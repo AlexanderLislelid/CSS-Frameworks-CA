@@ -3,10 +3,71 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Login</title>
+    <script
+      src="https://kit.fontawesome.com/534136dc01.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="./css/style.css" />
   </head>
-  <body class="bg-zinc-800 text-gray-100">
-    <h1 class="text-4xl text-blue-500">Test</h1>
+  <body
+    class="min-h-screen bg-[linear-gradient(120deg,#2D3364_0%,#23295A_25%,#1A1F3C_55%,#10162B_75%,#080B14_100%)] text-white"
+  >
+    <main class="flex min-h-screen items-center justify-center">
+      <form class="form" action="/profile">
+        <img src="./assets/img/logo2.svg" class="mb-12 h-15" />
+        <h1 class="font-heading text-2xl font-bold">Welcome back</h1>
+        <p class="mt-1 text-sm text-gray-400">
+          Sign in to continue to your communities
+        </p>
+        <label for="email" class="mt-8 block text-xs font-bold text-gray-400"
+          >EMAIL OR USERNAME</label
+        >
+        <input
+          type="email"
+          name="email"
+          id="email"
+          class="mt-2 w-full rounded-lg border border-white/10 bg-gray-900 px-3 py-2 text-sm text-white placeholder-gray-400/60 transition outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
+          placeholder="you@example.gmail.com"
+        />
+        <label for="password" class="mt-6 block text-xs font-bold text-gray-400"
+          >PASSWORD</label
+        >
+        <input
+          type="password"
+          name="password"
+          id="password"
+          minlength="8"
+          required
+          class="mt-2 w-full rounded-lg border border-white/10 bg-gray-900 px-3 py-2 text-sm text-white placeholder-gray-400/60 transition outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
+          placeholder="*********"
+        />
+        <p class="mt-1 px-2 text-right text-sm text-indigo-400">
+          forgot your password?
+        </p>
+        <button class="btn-primary mt-8 w-full">Login</button>
+        <div class="my-4 flex items-center gap-4 text-xs text-gray-400">
+          <div class="h-px flex-1 bg-white/10"></div>
+          <span>OR CONTINUE WITH</span>
+          <div class="h-px flex-1 bg-white/10"></div>
+        </div>
+        <div class="flex gap-4">
+          <button
+            class="w-full rounded-lg bg-gray-700 px-3 py-2 transition hover:scale-105 hover:bg-gray-900"
+          >
+            <i class="fa-brands fa-google mr-2 text-blue-500"></i>Google
+          </button>
+          <button
+            class="w-full rounded-lg bg-gray-700 px-3 py-2 transition hover:scale-105 hover:bg-gray-900"
+          >
+            <i class="fa-brands fa-github mr-2"></i>Github
+          </button>
+        </div>
+        <p class="mt-5 text-sm text-gray-400">
+          Don't have an account?
+          <a href="" class="text-indigo-400">Register now</a>
+        </p>
+      </form>
+    </main>
   </body>
 </html>
