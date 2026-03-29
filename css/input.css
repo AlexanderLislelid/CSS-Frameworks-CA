@@ -17,11 +17,9 @@
   @apply m-6 w-80 max-w-112.5 rounded-3xl border border-gray-600 bg-gray-800 p-8 shadow-xl backdrop-blur-md md:min-w-110;
 }
 
-@utility autofill-fix {
-  &:-webkit-autofill {
-    -webkit-box-shadow: 0 0 0px 1000px #111827 inset;
-    -webkit-text-fill-color: white;
-    font-family: inherit;
-    font-size: inherit;
-  }
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px #111827 inset !important;
+  -webkit-text-fill-color: white !important;
+  font-family: inherit !important;
+  font-size: inherit !important;
 }
