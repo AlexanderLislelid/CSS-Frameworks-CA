@@ -27,11 +27,105 @@
     ></script>
     <link rel="stylesheet" href="../css/style.css" />
   </head>
-  <body
-    class="min-h-screen bg-[linear-gradient(120deg,#2D3364_0%,#23295A_25%,#1A1F3C_55%,#10162B_75%,#080B14_100%)] text-white"
-  >
-    <nav></nav>
-    <main></main>
-    <footer></footer>
+  <body class="background flex min-h-screen flex-col text-white">
+    <nav
+      class="mx-auto my-6 hidden items-center rounded-full bg-slate-900 px-2 py-2 shadow-lg sm:flex"
+    >
+      <a
+        href="../feed/index.html"
+        class="mr-8 flex size-8 items-center justify-center rounded-full bg-gray-300 text-black transition hover:bg-indigo-500 hover:text-white"
+      >
+        <i class="fa-solid fa-mug-saucer"></i>
+      </a>
+      <div class="relative">
+        <i
+          class="fa-solid fa-magnifying-glass absolute top-2 left-3 text-sm text-gray-400"
+        ></i>
+        <input
+          type="search"
+          class="rounded-full border border-white/10 py-1 pl-8 text-sm placeholder-gray-400/60 transition outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
+          placeholder="search.."
+        />
+      </div>
+      <ul class="mx-6">
+        <li class="flex gap-4">
+          <a
+            href="../feed/index.html"
+            class="transition hover:scale-105 hover:text-indigo-400"
+            >Feed</a
+          >
+          <a href="../profile/index.html" class="active">Profile</a>
+        </li>
+      </ul>
+
+      <a
+        href="../index.html"
+        class="flex size-8 items-center justify-center rounded-full bg-gray-300 text-black transition hover:bg-indigo-500 hover:text-white"
+      >
+        <i class="fa-solid fa-arrow-right-from-bracket text-sm"></i>
+      </a>
+    </nav>
+    <nav
+      class="fixed right-0 bottom-0 left-0 flex items-center justify-around border-t border-white/10 bg-slate-900 px-4 py-3 sm:hidden"
+    >
+      <a
+        href="../feed/index.html"
+        class="flex flex-col items-center gap-1 text-gray-400 transition hover:text-indigo-400"
+      >
+        <i class="fa-solid fa-house text-lg"></i>
+        <span class="text-xs">Feed</span>
+      </a>
+      <a
+        href="../profile/index.html"
+        class="flex flex-col items-center gap-1 text-gray-400 transition hover:text-indigo-400"
+      >
+        <i class="fa-solid fa-user text-lg"></i>
+        <span class="text-xs">Profile</span>
+      </a>
+      <a
+        href="../index.html"
+        class="flex flex-col items-center gap-1 text-gray-400 transition hover:text-indigo-400"
+      >
+        <i class="fa-solid fa-arrow-right-from-bracket text-lg"></i>
+        <span class="text-xs">Logout</span>
+      </a>
+    </nav>
+    <main class="flex-1"></main>
+
+    <footer class="hidden border-t border-white/10 bg-slate-900 sm:block">
+      <div class="mx-auto max-w-4xl px-6 py-8">
+        <div
+          class="flex flex-col items-center gap-6 sm:flex-row sm:justify-between"
+        >
+          <ul class="flex gap-6 text-sm text-gray-400">
+            <li>
+              <a href="#" class="transition hover:text-indigo-400">About</a>
+            </li>
+            <li>
+              <a href="#" class="transition hover:text-indigo-400">Contact</a>
+            </li>
+            <li>
+              <a href="#" class="transition hover:text-indigo-400">Privacy</a>
+            </li>
+          </ul>
+
+          <div class="flex gap-4 text-gray-400">
+            <a href="#" class="transition hover:text-indigo-400"
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
+            <a href="#" class="transition hover:text-indigo-400"
+              ><i class="fa-brands fa-x-twitter"></i
+            ></a>
+            <a href="#" class="transition hover:text-indigo-400"
+              ><i class="fa-brands fa-tiktok"></i
+            ></a>
+          </div>
+
+          <p class="text-xs text-gray-500">
+            © 2025 Yappuchino. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
