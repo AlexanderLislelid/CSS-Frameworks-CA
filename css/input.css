@@ -14,7 +14,7 @@
 }
 
 .form {
-  @apply m-6 w-80 max-w-112.5 rounded-3xl border border-gray-600 bg-gray-800 p-8 shadow-xl backdrop-blur-md md:min-w-110;
+  @apply m-6 w-full max-w-112.5 rounded-3xl border border-gray-600 bg-gray-800 p-8 shadow-xl backdrop-blur-md;
 }
 
 .background {

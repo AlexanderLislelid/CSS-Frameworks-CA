@@ -31,12 +31,6 @@
     <nav
       class="mx-auto my-6 hidden items-center rounded-full bg-slate-900 px-2 py-2 shadow-lg sm:flex"
     >
-      <a
-        href="../feed/index.html"
-        class="mr-8 flex size-8 items-center justify-center rounded-full bg-gray-300 text-black transition hover:bg-indigo-500 hover:text-white"
-      >
-        <i class="fa-solid fa-mug-saucer"></i>
-      </a>
       <div class="relative">
         <i
           class="fa-solid fa-magnifying-glass absolute top-2 left-3 text-sm text-gray-400"
@@ -47,14 +41,22 @@
           placeholder="search.."
         />
       </div>
-      <ul class="mx-6">
-        <li class="flex gap-4">
+
+      <ul class="mx-6 flex gap-4">
+        <li>
           <a
             href="../feed/index.html"
             class="transition hover:scale-105 hover:text-indigo-400"
             >Feed</a
           >
+        </li>
+        <li>
           <a href="../profile/index.html" class="active">Profile</a>
+        </li>
+        <li>
+          <a href="#" class="transition hover:scale-105 hover:text-indigo-400"
+            >Post</a
+          >
         </li>
       </ul>
 
@@ -77,10 +79,17 @@
       </a>
       <a
         href="../profile/index.html"
-        class="flex flex-col items-center gap-1 text-gray-300 transition hover:text-indigo-400"
+        class="flex flex-col items-center gap-1 text-indigo-400"
       >
         <i class="fa-solid fa-user text-lg"></i>
         <span class="text-xs">Profile</span>
+      </a>
+      <a
+        href="../index.html"
+        class="flex flex-col items-center gap-1 text-gray-300 transition hover:text-indigo-400"
+      >
+        <i class="fa-solid fa-plus text-lg"></i>
+        <span class="text-xs">Post</span>
       </a>
       <a
         href="../index.html"
@@ -90,7 +99,21 @@
         <span class="text-xs">Logout</span>
       </a>
     </nav>
-    <main class="flex-1"></main>
+    <main class="flex-1">
+      <div class="relative">
+        <img
+          src="../assets/img/banner.jpg"
+          alt="Profile banner"
+          class="h-50 w-full object-cover shadow-xl"
+        />
+        <div class="absolute inset-0 bg-black/60"></div>
+        <img
+          src="https://placehold.co/128x128/1A1B61/ffffff?text=AL"
+          alt="Profile picture"
+          class="absolute top-38 left-10 size-24 rounded-full object-cover ring-2 ring-slate-900"
+        />
+      </div>
+    </main>
 
     <footer class="hidden border-t border-white/10 bg-slate-900 sm:block">
       <div class="mx-auto max-w-4xl px-6 py-8">
