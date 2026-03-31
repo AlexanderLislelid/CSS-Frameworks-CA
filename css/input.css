@@ -22,7 +22,7 @@
 }
 
 .active {
-  @apply rounded-full bg-indigo-500 px-3;
+  @apply rounded-full bg-indigo-500 px-4 py-1;
 }
 
 .popover {
