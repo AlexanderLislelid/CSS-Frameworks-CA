@@ -154,10 +154,92 @@
             <h2>Followers</h2>
           </div>
         </div>
+        <div class="my-12 flex items-center gap-4 text-xs text-gray-400">
+          <div class="h-px flex-1 bg-white/10"></div>
+          <span>LATEST POSTS</span>
+          <div class="h-px flex-1 bg-white/10"></div>
+        </div>
+        <div class="mb-6 rounded-lg border border-white/10 p-4">
+          <h3 class="font-heading mb-2 text-xl">Today was a weird day</h3>
+          <p class="text-sm text-gray-300">
+            Made myself a third cup of coffee today and stared at a bug for two
+            hours only to realize I had a missing semicolon. Anyway, the coffee
+            was excellent. Life is strange and beautiful and I have no notes.
+          </p>
+          <div class="mt-4 flex justify-between">
+            <p class="text-sm text-gray-400">2 Hours ago</p>
+            <div class="flex items-center gap-4 text-sm">
+              <p><i class="fa-regular fa-comment"></i> 9</p>
+              <p><i class="fa-regular fa-heart"></i> 582</p>
+            </div>
+          </div>
+        </div>
+        <div class="mb-6 rounded-lg border border-white/10 p-4">
+          <h3 class="font-heading mb-2 text-xl">
+            Dark mode saved my sleep schedule
+          </h3>
+          <p class="text-sm text-gray-300">
+            Switched everything to dark mode last month and I swear I fall
+            asleep before midnight now. Coincidence? Probably. But I'm not
+            turning the lights back on and nobody can make me.
+          </p>
+          <div class="mt-4 flex justify-between">
+            <p class="text-sm text-gray-400">1 Day ago</p>
+            <div class="flex items-center gap-4 text-sm">
+              <p><i class="fa-regular fa-comment"></i> 14</p>
+              <p><i class="fa-regular fa-heart"></i> 341</p>
+            </div>
+          </div>
+        </div>
+        <div class="mb-6 rounded-lg border border-white/10 p-4">
+          <h3 class="font-heading mb-2 text-xl">
+            I named my rubber duck Gerald
+          </h3>
+          <p class="text-sm text-gray-300">
+            Gerald has heard more about async/await than any duck should have
+            to. He never judges me. He never tells me to just Google it. Gerald
+            is the best colleague I have ever had.
+          </p>
+          <div class="mt-4 flex justify-between">
+            <p class="text-sm text-gray-400">3 Days ago</p>
+            <div class="flex items-center gap-4 text-sm">
+              <p><i class="fa-regular fa-comment"></i> 27</p>
+              <p><i class="fa-regular fa-heart"></i> 814</p>
+            </div>
+          </div>
+        </div>
+        <div class="mb-6 rounded-lg border border-white/10 p-4">
+          <h3 class="font-heading mb-2 text-xl">
+            The standup was 47 minutes long
+          </h3>
+          <p class="text-sm text-gray-300">
+            It was supposed to be fifteen. Someone shared their screen. Someone
+            else had follow-up questions. I finished my coffee. I started a new
+            coffee. I considered a career in beekeeping.
+          </p>
+          <div class="mt-4 flex justify-between">
+            <p class="text-sm text-gray-400">5 Days ago</p>
+            <div class="flex items-center gap-4 text-sm">
+              <p><i class="fa-regular fa-comment"></i> 33</p>
+              <p><i class="fa-regular fa-heart"></i> 1.2k</p>
+            </div>
+          </div>
+        </div>
+        <div class="my-12 flex items-center gap-4 text-xs text-gray-400">
+          <div class="h-px flex-1 bg-white/10"></div>
+          <button class="text-indigo-400" popovertarget="load-more-popover">
+            <i class="fa-solid fa-angles-down"></i> LOAD MORE
+            <i class="fa-solid fa-angles-down"></i>
+          </button>
+          <div class="h-px flex-1 bg-white/10"></div>
+        </div>
+        <div id="load-more-popover" popover class="popover mx-auto">
+          <p>Not yet available</p>
+        </div>
       </div>
     </main>
 
-    <footer class="hidden border-t border-white/10 bg-slate-900 sm:block">
+    <footer class="border-t border-white/10 bg-slate-900 sm:block">
       <div class="mx-auto max-w-4xl px-6 py-8">
         <div
           class="flex flex-col items-center gap-6 sm:flex-row sm:justify-between"
@@ -175,20 +257,22 @@
           </ul>
 
           <div class="flex gap-4 text-gray-400">
-            <a href="#" class="transition hover:text-indigo-400"
+            <a
+              href="https://www.instagram.com/"
+              class="transition hover:text-indigo-400"
               ><i class="fa-brands fa-instagram"></i
             ></a>
-            <a href="#" class="transition hover:text-indigo-400"
+            <a href="https://x.com/" class="transition hover:text-indigo-400"
               ><i class="fa-brands fa-x-twitter"></i
             ></a>
-            <a href="#" class="transition hover:text-indigo-400"
+            <a
+              href="https://www.tiktok.com/"
+              class="transition hover:text-indigo-400"
               ><i class="fa-brands fa-tiktok"></i
             ></a>
           </div>
 
-          <p class="text-xs text-gray-500">
-            © 2025 Yappuchino. All rights reserved.
-          </p>
+          <p class="text-xs text-gray-500">© 2025 Yap. All rights reserved.</p>
         </div>
       </div>
     </footer>
