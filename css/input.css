@@ -25,6 +25,10 @@
   @apply rounded-full bg-indigo-500 px-3;
 }
 
+.popover {
+  @apply rounded-lg border border-white/20 bg-white/30 p-4 text-white shadow-lg backdrop-blur-md;
+}
+
 input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0px 1000px #111827 inset !important;
   -webkit-text-fill-color: white !important;
