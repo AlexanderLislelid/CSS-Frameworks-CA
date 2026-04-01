@@ -123,9 +123,9 @@
       <div
         class="mx-auto flex max-w-5xl flex-col gap-6 sm:mt-12 sm:grid sm:grid-cols-[1fr_3fr_1fr]"
       >
-        <div id="sidebar-left" class="hidden sm:block">
+        <div id="sidebar-left" class="mx-auto flex sm:block">
           <div
-            class="ml-2 rounded-lg border border-white/10 bg-slate-900 p-4 shadow-lg"
+            class="rounded-lg border border-white/10 bg-slate-900 p-4 shadow-lg sm:ml-2"
           >
             <p class="text-sm text-gray-300">FILTER</p>
             <div class="mt-4 flex flex-wrap gap-2 text-xs">
@@ -146,13 +146,104 @@
                 Nature
               </button>
               <button class="rounded-full bg-gray-800 px-2 text-indigo-200">
-                Cool
+                Gaming
               </button>
             </div>
           </div>
         </div>
-        <div id="feed" class="bg-blue-300"></div>
-        <div id="sidebar-right" class="hidden bg-blue-200 sm:block"></div>
+        <div id="feed" class="flex flex-col gap-4">
+          <div
+            class="mx-2 mt-10 rounded-lg border border-white/10 bg-slate-900 p-4 shadow-lg sm:mx-0 sm:mt-0"
+          >
+            <div class="flex items-center gap-3">
+              <img
+                src="https://randomuser.me/api/portraits/men/32.jpg"
+                alt="Profile picture"
+                class="size-10 rounded-full object-cover"
+              />
+              <div>
+                <p class="text-sm font-semibold">John Doe</p>
+                <p class="text-xs text-gray-400">@johndoe · 2h ago</p>
+              </div>
+              <button
+                class="ml-auto rounded-lg bg-indigo-500 px-2 py-1 text-xs"
+              >
+                <i class="fa-solid fa-user-plus"></i> Follow
+              </button>
+            </div>
+            <p class="my-4 text-sm text-gray-200">
+              Just shipped a new feature using TailwindCSS and it looks amazing.
+            </p>
+            <div class="my-4 mt-2 flex gap-2 text-sm text-indigo-300">
+              <p class="rounded-lg bg-indigo-900 px-2">#TailwindCSS</p>
+              <p class="rounded-lg bg-indigo-900 px-2">#OpenSource</p>
+            </div>
+            <div class="flex gap-6 text-sm text-gray-300">
+              <button
+                class="cursor-pointer"
+                popovertarget="popover-not-available"
+              >
+                <i class="fa-regular fa-comment"></i> 18
+              </button>
+              <button
+                class="cursor-pointer"
+                popovertarget="popover-not-available"
+              >
+                <i class="fa-regular fa-heart"></i> 33
+              </button>
+              <button
+                class="cursor-pointer"
+                popovertarget="popover-not-available"
+              >
+                <i class="fa-solid fa-share-nodes"></i> Share
+              </button>
+            </div>
+          </div>
+        </div>
+        <div id="sidebar-right" class="hidden sm:block">
+          <div
+            class="mr-2 rounded-lg border border-white/10 bg-slate-900 p-4 shadow-lg"
+          >
+            <p class="mb-6 text-sm text-gray-300">TRENDING</p>
+            <div class="mt-2 font-bold text-indigo-400">
+              <p>#Darkmode</p>
+              <p
+                class="border-b border-b-white/10 pb-2 text-xs font-medium text-gray-400"
+              >
+                2.3k Yaps
+              </p>
+              <p>#Memes</p>
+              <p
+                class="border-b border-b-white/10 pb-2 text-xs font-medium text-gray-400"
+              >
+                4.2k Yaps
+              </p>
+              <p>#Rubberducking</p>
+              <p
+                class="border-b border-b-white/10 pb-2 text-xs font-medium text-gray-400"
+              >
+                5k Yaps
+              </p>
+              <p>#TailwindCSS</p>
+              <p
+                class="border-b border-b-white/10 pb-2 text-xs font-medium text-gray-400"
+              >
+                8.1k Yaps
+              </p>
+              <p>#OpenSource</p>
+              <p
+                class="border-b border-b-white/10 pb-2 text-xs font-medium text-gray-400"
+              >
+                6.7k Yaps
+              </p>
+              <p>#DeepFocus</p>
+              <p class="pb-2 text-xs font-medium text-gray-400">3.9k Yaps</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="popover-not-available" popover class="popover mx-auto">
+        <p>Not yet available</p>
       </div>
     </main>
     <footer class="hidden border-t border-white/10 bg-slate-900 sm:block">
