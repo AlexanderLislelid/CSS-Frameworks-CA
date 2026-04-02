@@ -125,11 +125,55 @@
     </nav>
     <main class="flex-1">
       <div
-        class="mx-auto flex max-w-5xl flex-col gap-6 sm:mt-12 sm:grid sm:grid-cols-[1fr_3fr_1fr]"
+        class="mx-auto flex max-w-5xl flex-col gap-6 sm:mt-12 sm:grid sm:grid-cols-[1fr_3fr]"
       >
-        <section id="sidebar-left" class="mx-auto flex flex-col gap-2 sm:block">
+        <section
+          id="sidebar-left"
+          class="mx-auto flex w-full flex-col sm:ml-4 sm:gap-2"
+        >
+          <div id="trending" class="hidden w-full sm:block">
+            <div
+              class="rounded-lg border border-white/10 bg-slate-900 p-4 shadow-lg"
+            >
+              <p class="mb-6 text-sm text-gray-300">TRENDING</p>
+              <div class="mt-2 font-bold text-indigo-400">
+                <p>#VibeCheck</p>
+                <p
+                  class="border-b border-b-white/10 pb-2 text-xs font-medium text-gray-400"
+                >
+                  2.3k Yaps
+                </p>
+                <p>#PotatoSalad</p>
+                <p
+                  class="border-b border-b-white/10 pb-2 text-xs font-medium text-gray-400"
+                >
+                  4.2k Yaps
+                </p>
+                <p>#CloudWhisperer</p>
+                <p
+                  class="border-b border-b-white/10 pb-2 text-xs font-medium text-gray-400"
+                >
+                  5k Yaps
+                </p>
+                <p>#GoblinMode</p>
+                <p
+                  class="border-b border-b-white/10 pb-2 text-xs font-medium text-gray-400"
+                >
+                  8.1k Yaps
+                </p>
+                <p>#SnailRacing</p>
+                <p
+                  class="border-b border-b-white/10 pb-2 text-xs font-medium text-gray-400"
+                >
+                  6.7k Yaps
+                </p>
+                <p>#BreadPosting</p>
+                <p class="pb-2 text-xs font-medium text-gray-400">3.9k Yaps</p>
+              </div>
+            </div>
+          </div>
           <div
-            class="rounded-lg border border-white/10 bg-slate-900 p-4 shadow-lg sm:ml-2"
+            class="rounded-lg border border-white/10 bg-slate-900 p-4 shadow-lg"
           >
             <p class="text-sm text-gray-300">FILTER</p>
             <div class="mt-4 flex flex-wrap gap-2 text-xs">
@@ -152,9 +196,100 @@
               <button class="rounded-full bg-gray-800 px-2 text-indigo-200">
                 Gaming
               </button>
+              <button class="rounded-full bg-gray-800 px-2 text-indigo-200">
+                Travel
+              </button>
+              <button class="rounded-full bg-gray-800 px-2 text-indigo-200">
+                Music
+              </button>
+              <button class="rounded-full bg-gray-800 px-2 text-indigo-200">
+                Sports
+              </button>
+              <button class="rounded-full bg-gray-800 px-2 text-indigo-200">
+                Art
+              </button>
+              <button class="rounded-full bg-gray-800 px-2 text-indigo-200">
+                Tech
+              </button>
+            </div>
+          </div>
+          <div
+            class="rounded-lg border border-white/10 bg-slate-900 p-4 shadow-lg sm:block"
+          >
+            <p class="mb-4 text-sm text-gray-300">SUGGESTED</p>
+            <div class="flex flex-col gap-3">
+              <div class="flex items-center gap-3">
+                <img
+                  src="https://randomuser.me/api/portraits/women/25.jpg"
+                  alt="Profile picture"
+                  class="size-9 rounded-full object-cover"
+                />
+                <div class="min-w-0 flex-1">
+                  <p class="truncate text-sm font-semibold">Priya Sharma</p>
+                  <p class="truncate text-xs text-gray-400">@priyash</p>
+                </div>
+                <button
+                  class="cursor-pointer rounded-lg bg-indigo-500 px-2 py-1 text-xs"
+                  popovertarget="popover-not-available"
+                >
+                  Follow
+                </button>
+              </div>
+              <div class="flex items-center gap-3">
+                <img
+                  src="https://randomuser.me/api/portraits/men/41.jpg"
+                  alt="Profile picture"
+                  class="size-9 rounded-full object-cover"
+                />
+                <div class="min-w-0 flex-1">
+                  <p class="truncate text-sm font-semibold">Liam Torres</p>
+                  <p class="truncate text-xs text-gray-400">@liamt</p>
+                </div>
+                <button
+                  class="cursor-pointer rounded-lg bg-indigo-500 px-2 py-1 text-xs"
+                  popovertarget="popover-not-available"
+                >
+                  Follow
+                </button>
+              </div>
+              <div class="flex items-center gap-3">
+                <img
+                  src="https://randomuser.me/api/portraits/women/58.jpg"
+                  alt="Profile picture"
+                  class="size-9 rounded-full object-cover"
+                />
+                <div class="min-w-0 flex-1">
+                  <p class="truncate text-sm font-semibold">Nina Key</p>
+                  <p class="truncate text-xs text-gray-400">@ninak</p>
+                </div>
+                <button
+                  class="cursor-pointer rounded-lg bg-indigo-500 px-2 py-1 text-xs"
+                  popovertarget="popover-not-available"
+                >
+                  Follow
+                </button>
+              </div>
+              <div class="flex items-center gap-3">
+                <img
+                  src="https://randomuser.me/api/portraits/men/63.jpg"
+                  alt="Profile picture"
+                  class="size-9 rounded-full object-cover"
+                />
+                <div class="min-w-0 flex-1">
+                  <p class="truncate text-sm font-semibold">Ethan Brooks</p>
+                  <p class="truncate text-xs text-gray-400">@ethanb</p>
+                </div>
+                <button
+                  class="cursor-pointer rounded-lg bg-indigo-500 px-2 py-1 text-xs"
+                  popovertarget="popover-not-available"
+                >
+                  Follow
+                </button>
+              </div>
             </div>
           </div>
         </section>
+
         <div id="feed" class="mb-40 flex flex-col gap-4 sm:mb-20">
           <article
             class="mx-2 rounded-lg border border-white/10 bg-slate-900 p-4 shadow-lg sm:mx-0"
@@ -501,47 +636,6 @@
             </div>
           </article>
         </div>
-        <section id="sidebar-right" class="hidden sm:block">
-          <div
-            class="mr-2 rounded-lg border border-white/10 bg-slate-900 p-4 shadow-lg"
-          >
-            <p class="mb-6 text-sm text-gray-300">TRENDING</p>
-            <div class="mt-2 font-bold text-indigo-400">
-              <p>#Darkmode</p>
-              <p
-                class="border-b border-b-white/10 pb-2 text-xs font-medium text-gray-400"
-              >
-                2.3k Yaps
-              </p>
-              <p>#Memes</p>
-              <p
-                class="border-b border-b-white/10 pb-2 text-xs font-medium text-gray-400"
-              >
-                4.2k Yaps
-              </p>
-              <p>#Rubberducking</p>
-              <p
-                class="border-b border-b-white/10 pb-2 text-xs font-medium text-gray-400"
-              >
-                5k Yaps
-              </p>
-              <p>#TailwindCSS</p>
-              <p
-                class="border-b border-b-white/10 pb-2 text-xs font-medium text-gray-400"
-              >
-                8.1k Yaps
-              </p>
-              <p>#OpenSource</p>
-              <p
-                class="border-b border-b-white/10 pb-2 text-xs font-medium text-gray-400"
-              >
-                6.7k Yaps
-              </p>
-              <p>#DeepFocus</p>
-              <p class="pb-2 text-xs font-medium text-gray-400">3.9k Yaps</p>
-            </div>
-          </div>
-        </section>
       </div>
       <div id="popover-not-available" popover class="popover mx-auto">
         <p>Not yet available</p>

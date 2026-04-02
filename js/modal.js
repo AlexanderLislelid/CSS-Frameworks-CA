@@ -9,6 +9,3 @@ openDialogMobile.addEventListener("click", () => dialog.showModal());
 document
   .getElementById("close-dialog")
   .addEventListener("click", () => dialog.close());
-document
-  .getElementById("cancel-post")
-  .addEventListener("click", () => dialog.close());
