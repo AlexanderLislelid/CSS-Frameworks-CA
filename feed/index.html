@@ -26,6 +26,7 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="../css/style.css" />
+    <script src="../js/modal.js" defer></script>
   </head>
   <body class="background flex min-h-screen flex-col text-white">
     <nav
@@ -60,9 +61,12 @@
           >
         </li>
         <li>
-          <a href="#" class="transition hover:scale-105 hover:text-indigo-400"
-            >Post</a
+          <button
+            id="open-create-post-desktop"
+            class="cursor-pointer transition hover:scale-105 hover:text-indigo-400"
           >
+            Post
+          </button>
         </li>
       </ul>
 
@@ -90,13 +94,13 @@
         <i class="fa-solid fa-user text-lg"></i>
         <span class="text-xs">Profile</span>
       </a>
-      <a
-        href="#"
-        class="flex flex-col items-center gap-1 text-gray-300 transition hover:text-indigo-400"
+      <button
+        id="open-create-post"
+        class="flex cursor-pointer flex-col items-center gap-1 text-gray-300 transition hover:text-indigo-400"
       >
         <i class="fa-solid fa-plus text-lg"></i>
         <span class="text-xs">Post</span>
-      </a>
+      </button>
       <a
         href="../index.html"
         class="flex flex-col items-center gap-1 text-gray-300 transition hover:text-indigo-400"
@@ -113,7 +117,7 @@
           ></i>
           <input
             type="search"
-            class="min-w-2xs rounded-full border border-white/10 py-1 pl-8 text-sm placeholder-gray-400/60 transition outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
+            class="w-full rounded-full border border-white/10 py-1 pl-8 text-sm placeholder-gray-400/60 transition outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
             placeholder="search.."
           />
         </div>
@@ -123,7 +127,7 @@
       <div
         class="mx-auto flex max-w-5xl flex-col gap-6 sm:mt-12 sm:grid sm:grid-cols-[1fr_3fr_1fr]"
       >
-        <section id="sidebar-left" class="mx-auto flex sm:block">
+        <section id="sidebar-left" class="mx-auto flex flex-col gap-2 sm:block">
           <div
             class="rounded-lg border border-white/10 bg-slate-900 p-4 shadow-lg sm:ml-2"
           >
@@ -595,5 +599,29 @@
         </div>
       </div>
     </footer>
+    <dialog
+      class="mx-auto w-full max-w-md rounded-xl border border-white/10 bg-slate-900 p-6 text-white shadow-xl backdrop:bg-black/60 sm:my-20"
+      id="create-post-dialog"
+    >
+      <div class="flex items-center justify-between">
+        <h2 class="font-semibold">Create post</h2>
+      </div>
+      <textarea
+        name="post"
+        id="post"
+        rows="5"
+        class="mt-4 w-full resize-none rounded-lg border border-white/10 bg-slate-800 p-3 text-white placeholder-gray-400 focus:border-indigo-500 focus:outline-none"
+        placeholder="Yap about anything"
+      ></textarea>
+      <div class="mt-4 flex justify-between text-sm">
+        <button class="btn-primary">Post</button>
+        <button
+          id="close-dialog"
+          class="rounded-lg bg-slate-800 px-5 py-2 font-medium text-gray-500 shadow-md transition hover:scale-105 hover:bg-slate-700"
+        >
+          Cancel
+        </button>
+      </div>
+    </dialog>
   </body>
 </html>
