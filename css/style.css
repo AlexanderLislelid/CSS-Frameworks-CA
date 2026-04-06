@@ -354,6 +354,9 @@
   .h-50 {
     height: calc(var(--spacing) * 50);
   }
+  .h-200 {
+    height: calc(var(--spacing) * 200);
+  }
   .h-px {
     height: 1px;
   }
@@ -434,6 +437,12 @@
     text-overflow: ellipsis;
     white-space: nowrap;
   }
+  .rounded {
+    border-radius: 0.25rem;
+  }
+  .rounded-2xl {
+    border-radius: var(--radius-2xl);
+  }
   .rounded-full {
     border-radius: calc(infinity * 1px);
   }
@@ -442,6 +451,9 @@
   }
   .rounded-xl {
     border-radius: var(--radius-xl);
+  }
+  .rounded-se-2xl {
+    border-start-end-radius: var(--radius-2xl);
   }
   .rounded-l-2xl {
     border-top-left-radius: var(--radius-2xl);
@@ -549,6 +561,9 @@
   }
   .py-3 {
     padding-block: calc(var(--spacing) * 3);
+  }
+  .py-4 {
+    padding-block: calc(var(--spacing) * 4);
   }
   .py-8 {
     padding-block: calc(var(--spacing) * 8);
@@ -820,6 +835,11 @@
   .sm\:gap-2 {
     @media (width >= 40rem) {
       gap: calc(var(--spacing) * 2);
+    }
+  }
+  .sm\:rounded-lg {
+    @media (width >= 40rem) {
+      border-radius: var(--radius-lg);
     }
   }
 }
