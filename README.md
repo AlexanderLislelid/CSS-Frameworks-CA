@@ -11,10 +11,10 @@ A social media app built as a course assignment at Noroff. The app includes a lo
 
 ## Tech Stack
 
-- HTML5
-- Tailwind CSS v4
-- Vanilla JavaScript
-- Font Awesome icons
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS_v4-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![Font Awesome](https://img.shields.io/badge/Font_Awesome-528DD7?style=for-the-badge&logo=fontawesome&logoColor=white)
 
 ## Live Demo
 
