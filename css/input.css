@@ -13,6 +13,10 @@
   @apply rounded-lg bg-indigo-500 px-5 py-2 font-medium text-white shadow-md transition hover:scale-105 hover:bg-indigo-600;
 }
 
+.follow-btn {
+  @apply ml-auto cursor-pointer rounded-lg bg-indigo-500 px-2 py-1 text-xs transition hover:scale-105 hover:bg-indigo-600;
+}
+
 .form {
   @apply m-6 w-full max-w-112.5 rounded-3xl border border-gray-600 bg-gray-800 p-8 shadow-xl backdrop-blur-md;
 }
