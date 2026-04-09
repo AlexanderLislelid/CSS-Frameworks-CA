@@ -1,0 +1,731 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Browse and interact with posts on yap" />
+
+    <title>Feed</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="../assets/favicon_io/favicon.ico"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../assets/favicon_io/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../assets/favicon_io/favicon-16x16.png"
+    />
+    <script
+      src="https://kit.fontawesome.com/534136dc01.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="../js/modal.js" defer></script>
+  </head>
+  <body class="background flex min-h-screen flex-col text-white">
+    <nav
+      class="mx-auto my-6 hidden items-center rounded-full bg-slate-900 px-2 py-2 shadow-lg sm:flex"
+    >
+      <img
+        src="../assets/img/yap-logo.svg"
+        class="mr-6 ml-4 size-12"
+        alt="yap logo"
+      />
+
+      <div class="relative">
+        <i
+          class="fa-solid fa-magnifying-glass absolute top-2 left-3 text-sm text-gray-400"
+        ></i>
+        <input
+          type="search"
+          class="rounded-full border border-white/10 py-1 pl-8 text-sm placeholder-gray-400/60 transition outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
+          placeholder="search.."
+        />
+      </div>
+
+      <ul class="mx-6 flex gap-4">
+        <li>
+          <a href="../feed/index.html" class="active">Feed</a>
+        </li>
+        <li>
+          <a
+            href="../profile/index.html"
+            class="transition hover:scale-105 hover:text-indigo-400"
+            >Profile</a
+          >
+        </li>
+        <li>
+          <button
+            id="open-create-post-desktop"
+            class="cursor-pointer transition hover:scale-105 hover:text-indigo-400"
+          >
+            Post
+          </button>
+        </li>
+      </ul>
+
+      <a
+        href="../index.html"
+        class="mx-6 flex size-8 items-center justify-center rounded-full bg-gray-300 text-black transition hover:bg-indigo-500 hover:text-white"
+      >
+        <i class="fa-solid fa-arrow-right-from-bracket text-sm"></i>
+      </a>
+    </nav>
+    <nav
+      class="fixed right-0 bottom-0 left-0 flex items-center justify-around border-t border-white/10 bg-slate-900 px-4 py-3 sm:hidden"
+    >
+      <a
+        href="../feed/index.html"
+        class="flex flex-col items-center gap-1 text-indigo-400"
+      >
+        <i class="fa-solid fa-house text-lg"></i>
+        <span class="text-xs">Feed</span>
+      </a>
+      <a
+        href="../profile/index.html"
+        class="flex flex-col items-center gap-1 text-gray-300 transition hover:text-indigo-400"
+      >
+        <i class="fa-solid fa-user text-lg"></i>
+        <span class="text-xs">Profile</span>
+      </a>
+      <button
+        id="open-create-post"
+        class="flex cursor-pointer flex-col items-center gap-1 text-gray-300 transition hover:text-indigo-400"
+      >
+        <i class="fa-solid fa-plus text-lg"></i>
+        <span class="text-xs">Post</span>
+      </button>
+      <a
+        href="../index.html"
+        class="flex flex-col items-center gap-1 text-gray-300 transition hover:text-indigo-400"
+      >
+        <i class="fa-solid fa-arrow-right-from-bracket text-lg"></i>
+        <span class="text-xs">Logout</span>
+      </a>
+      <div
+        class="absolute bottom-15 flex w-full justify-center border-t border-white/10 bg-slate-900 p-4"
+      >
+        <div class="relative">
+          <i
+            class="fa-solid fa-magnifying-glass absolute top-2 left-3 text-sm text-gray-400"
+          ></i>
+          <input
+            type="search"
+            class="w-full rounded-full border border-white/20 py-1 pl-8 text-sm placeholder-gray-400/60 transition outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
+            placeholder="search.."
+          />
+        </div>
+      </div>
+    </nav>
+    <main class="flex-1">
+      <div
+        class="mx-auto flex max-w-5xl flex-col gap-6 sm:mt-12 sm:grid sm:grid-cols-[1fr_3fr]"
+      >
+        <section
+          id="sidebar-left"
+          class="mx-auto flex w-full flex-col sm:ml-4 sm:gap-2"
+        >
+          <div id="trending" class="hidden w-full sm:block">
+            <div
+              class="rounded-lg border border-white/10 bg-slate-900 p-4 shadow-lg"
+            >
+              <p class="mb-6 text-sm text-gray-300">TRENDING</p>
+              <div class="mt-2 font-bold text-indigo-400">
+                <p>#VibeCheck</p>
+                <p
+                  class="border-b border-b-white/10 pb-2 text-xs font-medium text-gray-400"
+                >
+                  2.3k Yaps
+                </p>
+                <p>#PotatoSalad</p>
+                <p
+                  class="border-b border-b-white/10 pb-2 text-xs font-medium text-gray-400"
+                >
+                  4.2k Yaps
+                </p>
+                <p>#CloudWhisperer</p>
+                <p
+                  class="border-b border-b-white/10 pb-2 text-xs font-medium text-gray-400"
+                >
+                  5k Yaps
+                </p>
+                <p>#GoblinMode</p>
+                <p
+                  class="border-b border-b-white/10 pb-2 text-xs font-medium text-gray-400"
+                >
+                  8.1k Yaps
+                </p>
+                <p>#SnailRacing</p>
+                <p
+                  class="border-b border-b-white/10 pb-2 text-xs font-medium text-gray-400"
+                >
+                  6.7k Yaps
+                </p>
+                <p>#BreadPosting</p>
+                <p class="pb-2 text-xs font-medium text-gray-400">3.9k Yaps</p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="border border-white/10 bg-slate-900 p-4 shadow-lg sm:rounded-lg"
+          >
+            <p class="text-sm text-gray-300">FILTER</p>
+            <div class="mt-4 flex flex-wrap gap-2 text-xs">
+              <button class="rounded-full bg-indigo-500 px-2">All</button>
+              <button
+                class="cursor-pointer rounded-full bg-gray-800 px-2 text-indigo-200 hover:bg-indigo-500 hover:text-white"
+              >
+                Cats
+              </button>
+              <button
+                class="cursor-pointer rounded-full bg-gray-800 px-2 text-indigo-200 hover:bg-indigo-500 hover:text-white"
+              >
+                Food
+              </button>
+              <button
+                class="cursor-pointer rounded-full bg-gray-800 px-2 text-indigo-200 hover:bg-indigo-500 hover:text-white"
+              >
+                Code
+              </button>
+              <button
+                class="cursor-pointer rounded-full bg-gray-800 px-2 text-indigo-200 hover:bg-indigo-500 hover:text-white"
+              >
+                Dogs
+              </button>
+              <button
+                class="cursor-pointer rounded-full bg-gray-800 px-2 text-indigo-200 hover:bg-indigo-500 hover:text-white"
+              >
+                Nature
+              </button>
+              <button
+                class="cursor-pointer rounded-full bg-gray-800 px-2 text-indigo-200 hover:bg-indigo-500 hover:text-white"
+              >
+                Gaming
+              </button>
+              <button
+                class="cursor-pointer rounded-full bg-gray-800 px-2 text-indigo-200 hover:bg-indigo-500 hover:text-white"
+              >
+                Travel
+              </button>
+              <button
+                class="cursor-pointer rounded-full bg-gray-800 px-2 text-indigo-200 hover:bg-indigo-500 hover:text-white"
+              >
+                Music
+              </button>
+              <button
+                class="cursor-pointer rounded-full bg-gray-800 px-2 text-indigo-200 hover:bg-indigo-500 hover:text-white"
+              >
+                Sports
+              </button>
+              <button
+                class="cursor-pointer rounded-full bg-gray-800 px-2 text-indigo-200 hover:bg-indigo-500 hover:text-white"
+              >
+                Art
+              </button>
+              <button
+                class="cursor-pointer rounded-full bg-gray-800 px-2 text-indigo-200 hover:bg-indigo-500 hover:text-white"
+              >
+                Tech
+              </button>
+            </div>
+          </div>
+          <div
+            class="border border-white/10 bg-slate-900 p-4 shadow-lg sm:block sm:rounded-lg"
+          >
+            <p class="mb-4 text-sm text-gray-300">SUGGESTED</p>
+            <div class="flex flex-col gap-3">
+              <div class="flex items-center gap-3">
+                <img
+                  src="https://randomuser.me/api/portraits/women/25.jpg"
+                  alt="Profile picture"
+                  class="size-9 rounded-full object-cover"
+                />
+                <div class="min-w-0 flex-1">
+                  <p class="truncate text-sm font-semibold">Priya Sharma</p>
+                  <p class="truncate text-xs text-gray-400">@priyash</p>
+                </div>
+                <button
+                  class="cursor-pointer rounded-lg bg-indigo-500 px-2 py-1 text-xs"
+                  popovertarget="popover-not-available"
+                >
+                  Follow
+                </button>
+              </div>
+              <div class="flex items-center gap-3">
+                <img
+                  src="https://randomuser.me/api/portraits/men/41.jpg"
+                  alt="Profile picture"
+                  class="size-9 rounded-full object-cover"
+                />
+                <div class="min-w-0 flex-1">
+                  <p class="truncate text-sm font-semibold">Liam Torres</p>
+                  <p class="truncate text-xs text-gray-400">@liamt</p>
+                </div>
+                <button
+                  class="cursor-pointer rounded-lg bg-indigo-500 px-2 py-1 text-xs"
+                  popovertarget="popover-not-available"
+                >
+                  Follow
+                </button>
+              </div>
+              <div class="flex items-center gap-3">
+                <img
+                  src="https://randomuser.me/api/portraits/women/58.jpg"
+                  alt="Profile picture"
+                  class="size-9 rounded-full object-cover"
+                />
+                <div class="min-w-0 flex-1">
+                  <p class="truncate text-sm font-semibold">Nina Key</p>
+                  <p class="truncate text-xs text-gray-400">@ninak</p>
+                </div>
+                <button
+                  class="cursor-pointer rounded-lg bg-indigo-500 px-2 py-1 text-xs"
+                  popovertarget="popover-not-available"
+                >
+                  Follow
+                </button>
+              </div>
+              <div class="flex items-center gap-3">
+                <img
+                  src="https://randomuser.me/api/portraits/men/63.jpg"
+                  alt="Profile picture"
+                  class="size-9 rounded-full object-cover"
+                />
+                <div class="min-w-0 flex-1">
+                  <p class="truncate text-sm font-semibold">Ethan Brooks</p>
+                  <p class="truncate text-xs text-gray-400">@ethanb</p>
+                </div>
+                <button
+                  class="cursor-pointer rounded-lg bg-indigo-500 px-2 py-1 text-xs"
+                  popovertarget="popover-not-available"
+                >
+                  Follow
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div id="feed" class="mb-40 flex flex-col gap-4 sm:mb-20">
+          <article
+            class="mx-2 rounded-lg border border-white/10 bg-slate-900 p-4 shadow-lg sm:mx-0"
+          >
+            <div class="flex items-center gap-3">
+              <img
+                src="https://randomuser.me/api/portraits/men/32.jpg"
+                alt="Profile picture"
+                class="size-10 rounded-full object-cover"
+              />
+              <div>
+                <p class="text-sm font-semibold">Kevin Placehold</p>
+                <p class="text-xs text-gray-400">@kevinp · 2h ago</p>
+              </div>
+              <button class="follow-btn" popovertarget="popover-not-available">
+                <i class="fa-solid fa-user-plus"></i> Follow
+              </button>
+            </div>
+            <p class="my-4 text-sm text-gray-200">
+              Just shipped a new feature using TailwindCSS and it looks amazing.
+            </p>
+            <div class="my-4 mt-2 flex gap-2 text-sm text-indigo-300">
+              <p class="rounded-lg bg-indigo-900 px-2">#TailwindCSS</p>
+              <p class="rounded-lg bg-indigo-900 px-2">#OpenSource</p>
+            </div>
+            <div class="flex gap-6 text-sm text-gray-300">
+              <button
+                class="cursor-pointer"
+                popovertarget="popover-not-available"
+              >
+                <i class="fa-regular fa-comment"></i> 18
+              </button>
+              <button
+                class="cursor-pointer"
+                popovertarget="popover-not-available"
+              >
+                <i class="fa-regular fa-heart"></i> 33
+              </button>
+              <button
+                class="cursor-pointer"
+                popovertarget="popover-not-available"
+              >
+                <i class="fa-solid fa-share-nodes"></i> Share
+              </button>
+            </div>
+          </article>
+          <article
+            class="mx-2 rounded-lg border border-white/10 bg-slate-900 p-4 shadow-lg sm:mx-0"
+          >
+            <div class="flex items-center gap-3">
+              <img
+                src="https://randomuser.me/api/portraits/women/44.jpg"
+                alt="Profile picture"
+                class="size-10 rounded-full object-cover"
+              />
+              <div>
+                <p class="text-sm font-semibold">Jane Dominoe</p>
+                <p class="text-xs text-gray-400">@janedom · 4h ago</p>
+              </div>
+              <button class="follow-btn" popovertarget="popover-not-available">
+                <i class="fa-solid fa-user-plus"></i> Follow
+              </button>
+            </div>
+
+            <p class="my-4 text-sm text-gray-200">
+              Dark mode is not a preference, it's a lifestyle. My eyes thank me
+              every single day. 🌙
+            </p>
+            <div class="my-4 mt-2 flex gap-2 text-sm text-indigo-300">
+              <p class="rounded-lg bg-indigo-900 px-2">#Darkmode</p>
+              <p class="rounded-lg bg-indigo-900 px-2">#DeepFocus</p>
+            </div>
+            <div class="flex gap-6 text-sm text-gray-300">
+              <button
+                class="cursor-pointer"
+                popovertarget="popover-not-available"
+              >
+                <i class="fa-regular fa-comment"></i> 7
+              </button>
+              <button
+                class="cursor-pointer"
+                popovertarget="popover-not-available"
+              >
+                <i class="fa-regular fa-heart"></i> 51
+              </button>
+              <button
+                class="cursor-pointer"
+                popovertarget="popover-not-available"
+              >
+                <i class="fa-solid fa-share-nodes"></i> Share
+              </button>
+            </div>
+          </article>
+          <article
+            class="mx-2 rounded-lg border border-white/10 bg-slate-900 p-4 shadow-lg sm:mx-0"
+          >
+            <div class="flex items-center gap-3">
+              <img
+                src="https://randomuser.me/api/portraits/men/32.jpg"
+                alt="Profile picture"
+                class="size-10 rounded-full object-cover"
+              />
+              <div>
+                <p class="text-sm font-semibold">Marcus Webb</p>
+                <p class="text-xs text-gray-400">@marcwebb · 2h ago</p>
+              </div>
+              <button class="follow-btn" popovertarget="popover-not-available">
+                <i class="fa-solid fa-user-plus"></i> Follow
+              </button>
+            </div>
+            <p class="my-4 text-sm text-gray-200">
+              Just shipped a feature I've been working on for weeks. There's no
+              feeling quite like merging that final PR. 🚀
+            </p>
+            <div class="my-4 mt-2 flex gap-2 text-sm text-indigo-300">
+              <p class="rounded-lg bg-indigo-900 px-2">#Dev</p>
+              <p class="rounded-lg bg-indigo-900 px-2">#Shipping</p>
+            </div>
+            <div class="flex gap-6 text-sm text-gray-300">
+              <button
+                class="cursor-pointer"
+                popovertarget="popover-not-available"
+              >
+                <i class="fa-regular fa-comment"></i> 12
+              </button>
+              <button
+                class="cursor-pointer"
+                popovertarget="popover-not-available"
+              >
+                <i class="fa-regular fa-heart"></i> 84
+              </button>
+              <button
+                class="cursor-pointer"
+                popovertarget="popover-not-available"
+              >
+                <i class="fa-solid fa-share-nodes"></i> Share
+              </button>
+            </div>
+          </article>
+          <article
+            class="mx-2 rounded-lg border border-white/10 bg-slate-900 p-4 shadow-lg sm:mx-0"
+          >
+            <div class="flex items-center gap-3">
+              <img
+                src="https://randomuser.me/api/portraits/women/68.jpg"
+                alt="Profile picture"
+                class="size-10 rounded-full object-cover"
+              />
+              <div>
+                <p class="text-sm font-semibold">Sophie Hartley</p>
+                <p class="text-xs text-gray-400">@sophiehart · 1h ago</p>
+              </div>
+              <button class="follow-btn" popovertarget="popover-not-available">
+                <i class="fa-solid fa-user-plus"></i> Follow
+              </button>
+            </div>
+            <img
+              src="https://placecats.com/600/400"
+              alt="cute cat"
+              class="my-4 w-full rounded-lg"
+            />
+            <p class="my-4 text-sm text-gray-200">
+              My cat just knocked my water bottle off the desk for the third
+              time today. She made eye contact with me the whole time. Zero
+              remorse. 🐱
+            </p>
+            <div class="my-4 mt-2 flex gap-2 text-sm text-indigo-300">
+              <p class="rounded-lg bg-indigo-900 px-2">#Cats</p>
+              <p class="rounded-lg bg-indigo-900 px-2">#CatTax</p>
+            </div>
+            <div class="flex gap-6 text-sm text-gray-300">
+              <button
+                class="cursor-pointer"
+                popovertarget="popover-not-available"
+              >
+                <i class="fa-regular fa-comment"></i> 23
+              </button>
+              <button
+                class="cursor-pointer"
+                popovertarget="popover-not-available"
+              >
+                <i class="fa-regular fa-heart"></i> 137
+              </button>
+              <button
+                class="cursor-pointer"
+                popovertarget="popover-not-available"
+              >
+                <i class="fa-solid fa-share-nodes"></i> Share
+              </button>
+            </div>
+          </article>
+          <article
+            class="mx-2 rounded-lg border border-white/10 bg-slate-900 p-4 shadow-lg sm:mx-0"
+          >
+            <div class="flex items-center gap-3">
+              <img
+                src="https://randomuser.me/api/portraits/men/54.jpg"
+                alt="Profile picture"
+                class="size-10 rounded-full object-cover"
+              />
+              <div>
+                <p class="text-sm font-semibold">Dev Patel</p>
+                <p class="text-xs text-gray-400">@devpatel · 30m ago</p>
+              </div>
+              <button class="follow-btn" popovertarget="popover-not-available">
+                <i class="fa-solid fa-user-plus"></i> Follow
+              </button>
+            </div>
+            <p class="my-4 text-sm text-gray-200">
+              Hot take: the best part of working from home is the commute.
+              Bedroom to desk in 4 seconds. New personal record. 🏠
+            </p>
+            <div class="my-4 mt-2 flex gap-2 text-sm text-indigo-300">
+              <p class="rounded-lg bg-indigo-900 px-2">#WFH</p>
+              <p class="rounded-lg bg-indigo-900 px-2">#RemoteLife</p>
+            </div>
+            <div class="flex gap-6 text-sm text-gray-300">
+              <button
+                class="cursor-pointer"
+                popovertarget="popover-not-available"
+              >
+                <i class="fa-regular fa-comment"></i> 18
+              </button>
+              <button
+                class="cursor-pointer"
+                popovertarget="popover-not-available"
+              >
+                <i class="fa-regular fa-heart"></i> 92
+              </button>
+              <button
+                class="cursor-pointer"
+                popovertarget="popover-not-available"
+              >
+                <i class="fa-solid fa-share-nodes"></i> Share
+              </button>
+            </div>
+          </article>
+          <article
+            class="mx-2 rounded-lg border border-white/10 bg-slate-900 p-4 shadow-lg sm:mx-0"
+          >
+            <div class="flex items-center gap-3">
+              <img
+                src="https://randomuser.me/api/portraits/women/12.jpg"
+                alt="Profile picture"
+                class="size-10 rounded-full object-cover"
+              />
+              <div>
+                <p class="text-sm font-semibold">Lea Fontaine</p>
+                <p class="text-xs text-gray-400">@leafont · 3h ago</p>
+              </div>
+              <button class="follow-btn" popovertarget="popover-not-available">
+                <i class="fa-solid fa-user-plus"></i> Follow
+              </button>
+            </div>
+
+            <p class="my-4 text-sm text-gray-200">
+              Coffee shop playlist hit different today. Finished an entire
+              design system in one sitting. Somebody find out what was playing
+              and send it to me. ☕
+            </p>
+            <div class="my-4 mt-2 flex gap-2 text-sm text-indigo-300">
+              <p class="rounded-lg bg-indigo-900 px-2">#Design</p>
+              <p class="rounded-lg bg-indigo-900 px-2">#FlowState</p>
+            </div>
+            <div class="flex gap-6 text-sm text-gray-300">
+              <button
+                class="cursor-pointer"
+                popovertarget="popover-not-available"
+              >
+                <i class="fa-regular fa-comment"></i> 34
+              </button>
+              <button
+                class="cursor-pointer"
+                popovertarget="popover-not-available"
+              >
+                <i class="fa-regular fa-heart"></i> 210
+              </button>
+              <button
+                class="cursor-pointer"
+                popovertarget="popover-not-available"
+              >
+                <i class="fa-solid fa-share-nodes"></i> Share
+              </button>
+            </div>
+          </article>
+          <article
+            class="mx-2 rounded-lg border border-white/10 bg-slate-900 p-4 shadow-lg sm:mx-0"
+          >
+            <div class="flex items-center gap-3">
+              <img
+                src="https://randomuser.me/api/portraits/men/77.jpg"
+                alt="Profile picture"
+                class="size-10 rounded-full object-cover"
+              />
+              <div>
+                <p class="text-sm font-semibold">Omar Ndiaye</p>
+                <p class="text-xs text-gray-400">@omarn · 5h ago</p>
+              </div>
+              <button class="follow-btn" popovertarget="popover-not-available">
+                <i class="fa-solid fa-user-plus"></i> Follow
+              </button>
+            </div>
+            <p class="my-4 text-sm text-gray-200">
+              Reminder that "it works on my machine" is not a deployment
+              strategy. Learned this the hard way. Again. 😅
+            </p>
+            <div class="my-4 mt-2 flex gap-2 text-sm text-indigo-300">
+              <p class="rounded-lg bg-indigo-900 px-2">#Dev</p>
+              <p class="rounded-lg bg-indigo-900 px-2">#Debugging</p>
+            </div>
+            <div class="flex gap-6 text-sm text-gray-300">
+              <button
+                class="cursor-pointer"
+                popovertarget="popover-not-available"
+              >
+                <i class="fa-regular fa-comment"></i> 41
+              </button>
+              <button
+                class="cursor-pointer"
+                popovertarget="popover-not-available"
+              >
+                <i class="fa-regular fa-heart"></i> 318
+              </button>
+              <button
+                class="cursor-pointer"
+                popovertarget="popover-not-available"
+              >
+                <i class="fa-solid fa-share-nodes"></i> Share
+              </button>
+            </div>
+          </article>
+        </div>
+      </div>
+      <div id="popover-not-available" popover class="popover mx-auto">
+        <p>Not yet available</p>
+      </div>
+    </main>
+    <footer class="mb-30 border-t border-white/10 bg-slate-900 sm:mb-0">
+      <div class="mx-auto max-w-4xl px-6 py-8">
+        <div
+          class="flex flex-col items-center gap-6 sm:flex-row sm:justify-between"
+        >
+          <ul class="flex gap-6 text-sm text-gray-400">
+            <li>
+              <button
+                class="cursor-pointer transition hover:text-indigo-400"
+                popovertarget="popover-not-available"
+              >
+                About
+              </button>
+            </li>
+            <li>
+              <button
+                class="cursor-pointer transition hover:text-indigo-400"
+                popovertarget="popover-not-available"
+              >
+                Contact
+              </button>
+            </li>
+            <li>
+              <button
+                class="transition hover:text-indigo-400"
+                popovertarget="popover-not-available"
+              >
+                Privacy
+              </button>
+            </li>
+          </ul>
+
+          <div class="flex gap-4 text-gray-400">
+            <a
+              href="https://www.instagram.com/"
+              class="transition hover:text-indigo-400"
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
+            <a href="https://x.com/" class="transition hover:text-indigo-400"
+              ><i class="fa-brands fa-x-twitter"></i
+            ></a>
+            <a
+              href="https://www.tiktok.com/"
+              class="transition hover:text-indigo-400"
+              ><i class="fa-brands fa-tiktok"></i
+            ></a>
+          </div>
+
+          <p class="text-xs text-gray-500">© 2025 Yap. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+    <dialog
+      class="mx-auto w-full max-w-md rounded-xl border border-white/10 bg-slate-900 p-6 text-white shadow-xl backdrop:bg-black/60 sm:my-20"
+      id="create-post-dialog"
+    >
+      <div class="flex items-center justify-between">
+        <h2 class="font-semibold">Create post</h2>
+      </div>
+      <textarea
+        name="post"
+        id="post"
+        rows="5"
+        class="mt-4 w-full resize-none rounded-lg border border-white/10 bg-slate-800 p-3 text-white placeholder-gray-400 focus:border-indigo-500 focus:outline-none"
+        placeholder="Yap about anything"
+      ></textarea>
+      <div class="mt-4 flex justify-between text-sm">
+        <button class="btn-primary">Post</button>
+        <button
+          id="close-dialog"
+          class="rounded-lg bg-slate-800 px-5 py-2 font-medium text-gray-500 shadow-md transition hover:scale-105 hover:bg-slate-700"
+        >
+          Cancel
+        </button>
+      </div>
+    </dialog>
+  </body>
+</html>

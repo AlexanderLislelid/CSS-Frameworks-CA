@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="View and manage your yap profile, posts, and followers." />
+    <title>Profile</title>
+
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="../assets/favicon_io/favicon.ico"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../assets/favicon_io/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../assets/favicon_io/favicon-16x16.png"
+    />
+    <script
+      src="https://kit.fontawesome.com/534136dc01.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="../js/modal.js" defer></script>
+  </head>
+  <body class="background flex min-h-screen flex-col text-white">
+    <nav
+      class="mx-auto my-6 hidden items-center rounded-full bg-slate-900 px-2 py-2 shadow-lg sm:flex"
+    >
+      <img
+        src="../assets/img/yap-logo.svg"
+        class="mr-6 ml-4 size-12"
+        alt="yap logo"
+      />
+
+      <div class="relative">
+        <i
+          class="fa-solid fa-magnifying-glass absolute top-2 left-3 text-sm text-gray-400"
+        ></i>
+        <input
+          type="search"
+          class="rounded-full border border-white/10 py-1 pl-8 text-sm placeholder-gray-400/60 transition outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
+          placeholder="search.."
+        />
+      </div>
+
+      <ul class="mx-6 flex gap-4">
+        <li>
+          <a
+            href="../feed/index.html"
+            class="transition hover:scale-105 hover:text-indigo-400"
+            >Feed</a
+          >
+        </li>
+        <li>
+          <a href="../profile/index.html" class="active">Profile</a>
+        </li>
+        <li>
+          <button
+            class="cursor-pointer transition hover:scale-105 hover:text-indigo-400"
+            id="open-create-post-desktop"
+          >
+            Post
+          </button>
+        </li>
+      </ul>
+
+      <a
+        href="../index.html"
+        class="mx-6 flex size-8 items-center justify-center rounded-full bg-gray-300 text-black transition hover:bg-indigo-500 hover:text-white"
+      >
+        <i class="fa-solid fa-arrow-right-from-bracket text-sm"></i>
+      </a>
+    </nav>
+    <nav
+      class="fixed right-0 bottom-0 left-0 flex items-center justify-around bg-slate-900 px-4 py-3 sm:hidden"
+    >
+      <a
+        href="../feed/index.html"
+        class="flex flex-col items-center gap-1 text-gray-300 transition hover:text-indigo-400"
+      >
+        <i class="fa-solid fa-house text-lg"></i>
+        <span class="text-xs">Feed</span>
+      </a>
+      <a
+        href="../profile/index.html"
+        class="flex flex-col items-center gap-1 text-indigo-400"
+      >
+        <i class="fa-solid fa-user text-lg"></i>
+        <span class="text-xs">Profile</span>
+      </a>
+      <button
+        class="flex cursor-pointer flex-col items-center gap-1 text-gray-300 transition hover:text-indigo-400"
+        id="open-create-post"
+      >
+        <i class="fa-solid fa-plus text-lg"></i>
+        <span class="text-xs">Post</span>
+      </button>
+      <a
+        href="../index.html"
+        class="flex flex-col items-center gap-1 text-gray-300 transition hover:text-indigo-400"
+      >
+        <i class="fa-solid fa-arrow-right-from-bracket text-lg"></i>
+        <span class="text-xs">Logout</span>
+      </a>
+      <div
+        class="absolute bottom-15 flex w-full justify-center border-t border-white/10 bg-slate-900 p-4"
+      >
+        <div class="relative">
+          <i
+            class="fa-solid fa-magnifying-glass absolute top-2 left-3 text-sm text-gray-400"
+          ></i>
+          <input
+            type="search"
+            class="w-full rounded-full border border-white/20 py-1 pl-8 text-sm placeholder-gray-400/60 transition outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
+            placeholder="search.."
+          />
+        </div>
+      </div>
+    </nav>
+    <main class="mb-24 flex-1">
+      <div class="relative">
+        <img
+          src="../assets/img/banner.jpg"
+          alt="Profile banner"
+          class="h-50 w-full object-cover shadow-xl"
+        />
+        <div class="absolute inset-0 bg-black/60"></div>
+        <img
+          src="https://placehold.co/128x128/1A1B61/ffffff?text=BK"
+          alt="Profile picture"
+          class="absolute top-38 left-10 size-24 rounded-full object-cover ring-2 ring-slate-900"
+        />
+      </div>
+      <div
+        class="mx-auto my-20 flex max-w-3xl flex-col rounded-xl bg-slate-900 p-4"
+      >
+        <div class="mt-2 flex justify-between text-sm">
+          <h2 class="font-heading text-2xl">Bjørn Kafferud</h2>
+          <button
+            class="cursor-pointer rounded-lg bg-indigo-500 px-2 py-1 font-medium text-white shadow-md transition hover:scale-105 hover:bg-indigo-600"
+          >
+            <i class="fa-solid fa-user-plus"></i>
+          </button>
+        </div>
+        <div class="flex gap-4 text-sm">
+          <p class="text-indigo-300">@bkrud</p>
+          <p class="text-gray-400">Joined March 2026</p>
+        </div>
+        <p class="mt-8 text-gray-400">
+          Perpetually caffeinated, professional overthinker and occasional poet.
+          Here to yap about coffee, code and the general chaos of existing
+        </p>
+        <div class="mt-4 flex gap-4 text-sm">
+          <span class="rounded-full bg-gray-800 px-2 py-1 text-gray-200"
+            ><i class="fa-solid fa-location-dot"></i> Bergen, Norway</span
+          >
+          <span class="rounded-full bg-gray-800 px-2 py-1 text-gray-200"
+            ><i class="fa-solid fa-link"></i> Bkafferud.no</span
+          >
+        </div>
+        <div class="mt-10 grid grid-cols-3 gap-0.5 text-center">
+          <div class="rounded-l-2xl bg-blue-500 py-3 text-sm">
+            <h2 class="font-heading text-2xl font-extrabold">67</h2>
+            <p>Yaps</p>
+          </div>
+          <div class="bg-blue-500 py-3 text-sm">
+            <h2 class="font-heading text-2xl font-extrabold">88</h2>
+            <h2>Following</h2>
+          </div>
+          <div class="rounded-r-2xl bg-blue-500 py-3 text-sm">
+            <h2 class="font-heading text-2xl font-extrabold">178</h2>
+            <h2>Followers</h2>
+          </div>
+        </div>
+        <div class="my-12 flex items-center gap-4 text-xs text-gray-400">
+          <div class="h-px flex-1 bg-white/10"></div>
+          <span>LATEST POSTS</span>
+          <div class="h-px flex-1 bg-white/10"></div>
+        </div>
+        <div class="mb-6 rounded-lg border border-white/10 p-4">
+          <h3 class="font-heading mb-2 text-xl">Today was a weird day</h3>
+          <p class="text-sm text-gray-300">
+            Made myself a third cup of coffee today and stared at a bug for two
+            hours only to realize I had a missing semicolon. Anyway, the coffee
+            was excellent. Life is strange and beautiful and I have no notes.
+          </p>
+          <div class="mt-4 flex justify-between">
+            <p class="text-sm text-gray-400">2 Hours ago</p>
+            <div class="flex items-center gap-4 text-sm">
+              <p><i class="fa-regular fa-comment"></i> 9</p>
+              <p><i class="fa-regular fa-heart"></i> 582</p>
+            </div>
+          </div>
+        </div>
+        <div class="mb-6 rounded-lg border border-white/10 p-4">
+          <h3 class="font-heading mb-2 text-xl">
+            Dark mode saved my sleep schedule
+          </h3>
+          <p class="text-sm text-gray-300">
+            Switched everything to dark mode last month and I swear I fall
+            asleep before midnight now. Coincidence? Probably. But I'm not
+            turning the lights back on and nobody can make me.
+          </p>
+          <div class="mt-4 flex justify-between">
+            <p class="text-sm text-gray-400">1 Day ago</p>
+            <div class="flex items-center gap-4 text-sm">
+              <p><i class="fa-regular fa-comment"></i> 14</p>
+              <p><i class="fa-regular fa-heart"></i> 341</p>
+            </div>
+          </div>
+        </div>
+        <div class="mb-6 rounded-lg border border-white/10 p-4">
+          <h3 class="font-heading mb-2 text-xl">
+            I named my rubber duck Gerald
+          </h3>
+          <p class="text-sm text-gray-300">
+            Gerald has heard more about async/await than any duck should have
+            to. He never judges me. He never tells me to just Google it. Gerald
+            is the best colleague I have ever had.
+          </p>
+          <div class="mt-4 flex justify-between">
+            <p class="text-sm text-gray-400">3 Days ago</p>
+            <div class="flex items-center gap-4 text-sm">
+              <p><i class="fa-regular fa-comment"></i> 27</p>
+              <p><i class="fa-regular fa-heart"></i> 814</p>
+            </div>
+          </div>
+        </div>
+        <div class="mb-6 rounded-lg border border-white/10 p-4">
+          <h3 class="font-heading mb-2 text-xl">
+            The standup was 47 minutes long
+          </h3>
+          <p class="text-sm text-gray-300">
+            It was supposed to be fifteen. Someone shared their screen. Someone
+            else had follow-up questions. I finished my coffee. I started a new
+            coffee. I considered a career in beekeeping.
+          </p>
+          <div class="mt-4 flex justify-between">
+            <p class="text-sm text-gray-400">5 Days ago</p>
+            <div class="flex items-center gap-4 text-sm">
+              <p><i class="fa-regular fa-comment"></i> 33</p>
+              <p><i class="fa-regular fa-heart"></i> 1.2k</p>
+            </div>
+          </div>
+        </div>
+        <div class="my-12 flex items-center gap-4 text-xs text-gray-400">
+          <div class="h-px flex-1 bg-white/10"></div>
+          <button class="text-indigo-400" popovertarget="popover-not-available">
+            <i class="fa-solid fa-angles-down"></i> LOAD MORE
+            <i class="fa-solid fa-angles-down"></i>
+          </button>
+          <div class="h-px flex-1 bg-white/10"></div>
+        </div>
+        <div id="popover-not-available" popover class="popover mx-auto">
+          <p>Not yet available</p>
+        </div>
+      </div>
+    </main>
+
+    <footer class="hidden border-t border-white/10 bg-slate-900 sm:block">
+      <div class="mx-auto max-w-4xl px-6 py-8">
+        <div
+          class="flex flex-col items-center gap-6 sm:flex-row sm:justify-between"
+        >
+          <ul class="flex gap-6 text-sm text-gray-400">
+            <li>
+              <button
+                class="cursor-pointer transition hover:text-indigo-400"
+                popovertarget="popover-not-available"
+              >
+                About
+              </button>
+            </li>
+            <li>
+              <button
+                class="cursor-pointer transition hover:text-indigo-400"
+                popovertarget="popover-not-available"
+              >
+                Contact
+              </button>
+            </li>
+            <li>
+              <button
+                class="transition hover:text-indigo-400"
+                popovertarget="popover-not-available"
+              >
+                Privacy
+              </button>
+            </li>
+          </ul>
+
+          <div class="flex gap-4 text-gray-400">
+            <a
+              href="https://www.instagram.com/"
+              class="transition hover:text-indigo-400"
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
+            <a href="https://x.com/" class="transition hover:text-indigo-400"
+              ><i class="fa-brands fa-x-twitter"></i
+            ></a>
+            <a
+              href="https://www.tiktok.com/"
+              class="transition hover:text-indigo-400"
+              ><i class="fa-brands fa-tiktok"></i
+            ></a>
+          </div>
+
+          <p class="text-xs text-gray-500">© 2025 Yap. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+    <dialog
+      class="mx-auto w-full max-w-md rounded-xl border border-white/10 bg-slate-900 p-6 text-white shadow-xl backdrop:bg-black/60 sm:my-20"
+      id="create-post-dialog"
+    >
+      <div class="flex items-center justify-between">
+        <h2 class="font-semibold">Create post</h2>
+      </div>
+      <textarea
+        name="post"
+        id="post"
+        rows="5"
+        class="mt-4 w-full resize-none rounded-lg border border-white/10 bg-slate-800 p-3 text-white placeholder-gray-400 focus:border-indigo-500 focus:outline-none"
+        placeholder="Yap about anything"
+      ></textarea>
+      <div class="mt-4 flex justify-between text-sm">
+        <button class="btn-primary">Post</button>
+        <button
+          id="close-dialog"
+          class="rounded-lg bg-slate-800 px-5 py-2 font-medium text-gray-500 shadow-md transition hover:scale-105 hover:bg-slate-700"
+        >
+          Cancel
+        </button>
+      </div>
+    </dialog>
+  </body>
+</html>

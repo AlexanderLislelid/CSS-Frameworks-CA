@@ -1,0 +1,6 @@
+<svg width="100%" viewBox="50 50 140 130" xmlns="http://www.w3.org/2000/svg">
+
+<ellipse cx="120" cy="100" rx="60" ry="42" fill="#4338ca" style="fill:rgb(67, 56, 202);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<polygon points="88,142 72,162 112,146" fill="#4338ca" style="fill:rgb(67, 56, 202);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<text x="120" y="112" text-anchor="middle" fill="white" font-size="34" style="fill:rgb(255, 255, 255);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Syne, sans-serif;font-size:34px;font-weight:800;text-anchor:middle;dominant-baseline:auto">yap</text>
+</svg>

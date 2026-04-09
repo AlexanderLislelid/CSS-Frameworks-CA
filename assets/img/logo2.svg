@@ -1,0 +1,18 @@
+<svg viewBox="200 40 300 220" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bubbleGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#7C5CFC"/>
+      <stop offset="100%" stop-color="#A78BFA"/>
+    </linearGradient>
+    <linearGradient id="innerGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#9D7DFE"/>
+      <stop offset="100%" stop-color="#C4B0FF"/>
+    </linearGradient>
+  </defs>
+  <path d="M252 52 Q228 52 228 76 L228 148 Q228 172 252 172 L316 172 L330 196 L344 172 L428 172 Q452 172 452 148 L452 76 Q452 52 428 52 Z" fill="url(#bubbleGrad)"/>
+  <path d="M264 72 Q246 72 246 88 L246 136 Q246 152 264 152 L318 152 L328 168 L338 152 L416 152 Q434 152 434 136 L434 88 Q434 72 416 72 Z" fill="url(#innerGrad)" opacity="0.3"/>
+  <circle cx="310" cy="112" r="8" fill="#fff"/>
+  <circle cx="340" cy="112" r="8" fill="#fff" opacity="0.75"/>
+  <circle cx="370" cy="112" r="8" fill="#fff" opacity="0.45"/>
+  <text font-family="Syne, sans-serif" font-weight="800" font-size="54" fill="#7C5CFC" letter-spacing="-2" x="340" y="238" text-anchor="middle">Yappuchino</text>
+</svg>
